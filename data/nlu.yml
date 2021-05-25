@@ -1,0 +1,228 @@
+version: "2.0"
+nlu:
+
+- intent: details
+  examples: |
+    - i want to reserve a table
+    - reserve room
+    - book table
+    - I want to reserve a table for a party of [4]{"entity": "seats"}
+    - I want to reserve a table for [4]{"entity": "seats"}
+    - I want to reserve a table for a party of [4]{"entity": "seats"} at 8 pm
+    - I want to reserve a table for a party of [2]{"entity": "seats"} at 5 pm
+    - I want to reserve a table for a party of [3]{"entity": "seats"} for 5 pm
+    - I want to reserve a table for a party of [7]{"entity": "seats"} for 9 pm
+    - Book table for a party of [6]{"entity": "seats"}
+    - Book room for a party of [4]{"entity": "seats"}
+    - Book table for a party of [2]{"entity": "seats"}
+    - Book seats for [9]{"entity": "seats"} people
+    - Reserve seats for [10]{"entity": "seats"} people
+    - Please book table at your place
+    - reserve [4]{"entity": "seats"} tables for me
+    - book [3]{"entity": "seats"} rooms for your restaurant
+    - i want to reserve [4]{"entity": "seats"} rooms 
+    - reserve [4]{"entity": "seats"} seats
+    - book [10]{"entity": "seats"} seats
+    - reserve [810]{"entity": "seats"} seats
+    - i want to book table for [11]{"entity": "seats"} people in [AC]{"entity": "section"} section at 4 pm
+    - book [5]{"entity": "seats"} [AC]{"entity": "section"} rooms for 7 pm 
+    - book [6]{"entity": "seats"} [AC]{"entity": "section"} rooms for 7 pm 
+    - book [1]{"entity": "seats"} [AC]{"entity": "section"} rooms for 10 pm 
+    - book [5]{"entity": "seats"} [AC]{"entity": "section"} rooms for 9 pm 
+    - book [2]{"entity": "seats"} [AC]{"entity": "section"} rooms for 8 pm  
+    - book [7]{"entity": "seats"} [AC]{"entity": "section"} rooms for 7 pm  
+    - book [8]{"entity": "seats"} [AC]{"entity": "section"} rooms for 8 pm  
+    - reserve rooms for a party of [6]{"entity": "seats"} in [AC]{"entity": "section"} section at 9 pm
+    - reserve [AC]{"entity": "section"} rooms for a party of [3]{"entity": "seats"} at 9 pm
+    - reserve rooms for a party of [4]{"entity": "seats"} in [AC]{"entity": "section"} section at 9 pm
+    - reserve [AC]{"entity": "section"} rooms for a party of [1]{"entity": "seats"} at 9 pm
+    - reserve rooms for a party of [2]{"entity": "seats"} in [AC]{"entity": "section"} section at 9 pm
+    - book seats for [8]{"entity": "seats"} people in [AC]{"entity": "section"} section for 3 pm
+    - book tables for [1]{"entity": "seats"} people in [AC]{"entity": "section"} section for 3 pm
+    - book [AC]{"entity": "section"} seats for [9]{"entity": "seats"} people for 3 pm
+    - book [7]{"entity": "seats"} rooms for 7 pm 
+    - book [8]{"entity": "seats"} rooms for 8 pm 
+    - book [9]{"entity": "seats"} rooms for 9 pm 
+    - book [1]{"entity": "seats"} rooms for 5 pm 
+    - book [5]{"entity": "seats"} rooms in [AC]{"entity": "section"} section for 7 pm 
+    - book [6]{"entity": "seats"} rooms in [AC]{"entity": "section"} section  at 6 pm 
+    - book [1]{"entity": "seats"} rooms in [AC]{"entity": "section"} section  for 8 pm 
+    - book [5]{"entity": "seats"} rooms in [AC]{"entity": "section"} section  for 8 pm 
+    - book [2]{"entity": "seats"} rooms in [AC]{"entity": "section"} section  for 9 pm 
+    - book [7]{"entity": "seats"} rooms in [AC]{"entity": "section"} section  for 3 pm 
+    - book [8]{"entity": "seats"} rooms in [AC]{"entity": "section"} section  for 2 pm 
+    - book [7]{"entity": "seats"} rooms for 7 pm 
+    - book [8]{"entity": "seats"} rooms for 8 pm 
+    - book [9]{"entity": "seats"} rooms for 9 pm 
+    - book [1]{"entity": "seats"} rooms for 5 pm 
+    - make reservation for 6 pm for [5]{"entity": "seats"} people
+    - make reservation for 6 pm for [50]{"entity": "seats"} people
+    - make reservation for 6 pm for [15]{"entity": "seats"} people
+    - make reservation for 4 pm for [25]{"entity": "seats"} people
+    - make reservation for 4 pm for [35]{"entity": "seats"} people
+    - make reservation for 6 pm for [45]{"entity": "seats"} people
+    - make reservation for 3 pm for [55]{"entity": "seats"} people
+    - book for 10 pm for [9]{"entity": "seats"} people
+    - reserve rooms for 8 pm for [8]{"entity": "seats"} people
+    - reserve rooms for 6 pm for [1]{"entity": "seats"} people
+    - reserve rooms for 3 pm for [9]{"entity": "seats"} people
+    - reserve rooms for 5 pm for [4]{"entity": "seats"} people
+    - reserve rooms for 7 pm for [2]{"entity": "seats"} people
+    - reserve rooms for 2 pm for [7]{"entity": "seats"} people
+    - i want to reserve [15]{"entity": "seats"} rooms in [AC]{"entity": "section"} section at 4:30 pm
+    - please book [4]{"entity": "seats"} [AC]{"entity": "section"} rooms in 20 hours at your restaurant
+    - reserve [6]{"entity": "seats"} [Non-AC]{"entity": "section"} seats for 9:30 pm 
+    - book rooms for [5]{"entity": "seats"} people in [Non-AC]{"entity": "section"} in half an hour
+    - reserve [20]{"entity": "seats"} [AC]{"entity": "section"} tables for 8:45 pm
+    - book [4]{"entity": "seats"} [Non-AC]{"entity": "section"} rooms in 45 minutes 
+    - reserve [6]{"entity": "seats"} [Non-AC]{"entity": "section"} rooms in 35 minutes 
+    - book [r]oms for a group of [4]{"entity": "seats"}
+    - book [4]"entity": "seats"} seats for 10 pm
+    - i want to reserve [11]{"entity": "seats"} rooms at 8 pm tomorrow
+    - reserve [3]{"entity": "seats"} rooms for 10 pm
+    - book [4]{"entity": "seats"} seats for 11 pm
+    - book [2]{"entity": "seats"} rooms for 9 pm 
+    - book [1]{"entity": "seats"} tables for 5 pm
+    - book [2]{"entity": "seats"} rooms for 2 am
+    - book [4]"entity": "seats"} seats for 8 am
+    - Please book [3]{"entity": "seats"} [AC]{"entity": "section"} rooms at 9 pm 
+    - Please book [3]{"entity": "seats"} [AC]{"entity": "section"} rooms at 7 pm 
+    - Please book [3]{"entity": "seats"} [AC]{"entity": "section"} rooms at 8 pm 
+    - book [1]{"entity": "seats"} [AC]{"entity": "section"} rooms at 5 pm 
+    - book [2]{"entity": "seats"} [AC]{"entity": "section"} rooms at 4 pm 
+    - book [5]{"entity": "seats"} [AC]{"entity": "section"} rooms for 9 pm 
+    - Reserve [30]{"entity": "seats"} [AC]{"entity": "section"} rooms for 8:30 pm 
+    - Reserve [2]{"entity": "seats"} [AC]{"entity": "section"} rooms for 7 pm 
+    - Reserve [3]{"entity": "seats"} [AC]{"entity": "section"} rooms for 7:30 pm 
+    - Reserve [31]{"entity": "seats"} [AC]{"entity": "section"} rooms for 6 pm 
+    - Reserve [4]{"entity": "seats"} [AC]{"entity": "section"} rooms for 3 pm 
+    - i want to reserve [15]{"entity": "seats"} rooms in [AC]{"entity": "section"} section at 8 pm
+    - i want to reserve [5]{"entity": "seats"} rooms in [AC]{"entity": "section"} section at 9 pm
+    - i want to reserve [7]{"entity": "seats"} rooms in [AC]{"entity": "section"} section at 10 pm
+    - i want to reserve [8]{"entity": "seats"} rooms in [AC]{"entity": "section"} section at 7 pm
+    - i want to reserve [9]{"entity": "seats"} rooms in [AC]{"entity": "section"} section at 3 pm
+    - i want to reserve [10]{"entity": "seats"} rooms in [AC]{"entity": "section"} section at 2 pm
+    - i want to reserve [6]{"entity": "seats"} rooms in [AC]{"entity": "section"} section at 4 pm
+    - for 5 pm book [6]"entity": "seats"} seats
+    - for 7 pm book [2]"entity": "seats"} seats
+    - for 2 pm book [3]"entity": "seats"} seats
+    - for 4 pm book [4]{"entity": "seats"} seats
+    - for 8 pm book [6]{"entity": "seats"} seats
+    - i want to make a reservation for 8 pm
+    - i want to make a reservation for 3 pm
+    - i want to make a reservation for 2 pm
+    - please book [4]{"entity": "seats"} seats for 3 pm 
+    - reserve seats for 5 pm 
+    - book [3]{"entity": "seats"} rooms for 6 pm 
+    - book [2]{"entity": "seats"} rooms for 9 am
+    - i want to book [3]{"entity": "seats"} rooms for 10 am
+    - i want to book [2]{"entity": "seats"} rooms for 9 am
+    - please reserve rooms for 11 am
+    - i want to reserve [12]{"entity": "seats"} rooms for 7 pm
+    - i want to book [3]"entity": "seats"} rooms for 9 am
+    - i want to book rooms for 5 pm
+    - do reservation for 9 pm 
+    - please make a reservation for 8 pm 
+    - 3 am
+    - 8 am
+    - 7 am
+    - 7 pm
+    - 1 pm
+    - 2 pm
+    - 5 pm
+    - 3 pm
+    - [4]{"entity": "seats"}
+    - [5]{"entity": "seats"}
+    - [6]{"entity": "seats"}
+    - [3]{"entity": "seats"}
+    - [5]{"entity": "seats"}
+    - [2]{"entity": "seats"}
+    - [1]{"entity": "seats"}
+    - for [4]{"entity": "seats"} people
+    - for [2]{"entity": "seats"} 
+    - for [3]{"entity": "seats"}
+    - for group of [5]{"entity": "seats"}
+    - for [2]{"entity": "seats"} people
+    - [4]{"entity": "seats"} rooms
+    - [3]{"entity": "seats"} rooms
+    - [5]{"entity": "seats"} rooms
+    - [1]{"entity": "seats"} rooms
+    - for 8 pm
+    - for 4 pm
+    - at 3 pm
+    - at 9 pm
+    - 3 hours from now
+    - 2 hours later
+    - in 1 hour
+    - in 6 minutes
+    - after 20 hours
+    - in 20 minutes
+    - for 7pm
+    - at 8:30 pm
+    - for 9 pm
+    - at 6:34pm
+    - in 10 hours
+    - in 4 hours
+    - for 3:00 pm
+    - 10 pm
+    - 9 pm
+    - 9:45pm
+    - 10:35 pm
+    - I want to reserve [10]{"entity": "seats"} rooms for your restaurant
+    - for [5]{"entity": "seats"} people
+    - book [2]{"entity": "seats"} seats
+    - [five]{"entity": "seats"}
+    - [six]{"entity": "seats"}
+    - [ten]{"entity": "seats"}
+    - [five]{"entity": "seats"}
+    - [two]{"entity": "seats"}
+    - book [one]{"entity": "seats"} [AC]{"entity": "section"} room
+    - book [five]{"entity": "seats"} [AC]{"entity": "section"} rooms 
+    - i want to book [4]{"entity": "seats"} tables in [AC]{"entity": "section"} section
+    - reserve [4]{"entity": "seats"} tables in [Non-AC]{"entity": "section"} section
+    - please reserve [4]{"entity": "seats"} [Non-AC]{"entity": "section"} rooms 
+    - i want to book [3]{"entity": "seats"} seats in [AC]{"entity": "section"} section
+    - i want to reserve [4]{"entity": "seats"} [AC]{"entity": "section"} rooms
+    - I want to book [2]{"entity": "seats"} [AC]{"entity": "section"} rooms
+    - please book [1]{"entity": "seats"} [Non-AC]{"entity": "section"} rooms 
+
+- intent: faq_specials
+  examples: |
+    - What are the specials?
+    - What is special in your restaurant?
+    - What is your speciality?
+    - What is the best dish in your restaurant?
+    - Is there any unique speciality about your restaurant?
+    - What dishes are your speciality?
+
+    
+- intent: faq_timings
+  examples: |
+    - What are your timings?
+    - At what time the restaurant remains open?
+    - When is your working time?
+    - During what hours restaurant remains open?
+    - What are the opening and closing hours?
+
+- intent: faq_days
+  examples: |
+    - What days are you open?
+    - Will you be open tomorrow?
+    - Are you open today?
+    - Will you be open on Friday?
+    - Are you open on weekend?
+    - Are you open on weekdays? 
+    - Which days you remain open?
+    - What are your working days?
+    - How many days you remain open?
+    - What days of week are you open?
+
+- intent: faq_cancel
+  examples: |
+    - How do I cancel a reservation?
+    - I want to cancel my booking.
+    - How to cancel booking?
+    - What is the procedure for cancelling the reservation?
+    - What are the steps for cancelling reservation.
+    - Please let me know how to cancel booking.
+    
