@@ -1,0 +1,69 @@
+version: '2.0'
+session_config:
+  session_expiration_timing: 60
+  carry_over_slots_to_new_session: false
+intents:
+  - details
+  - faq_timings
+  - faq_specials
+  - faq_days
+  - faq_cancel
+  - ask_time
+entities:
+  - seats
+  - section
+  - timing
+  - time
+slots:  
+  seat:
+    type: unfeaturized
+    influence_conversation: false
+  section:
+    type: unfeaturized
+    influence_conversation: false
+  timing:
+    type: unfeaturized
+    influence_conversation: false
+  time:
+    type: unfeaturized
+    influence_conversation: false
+responses:
+  utter_timings:
+  - text: The restaurant opens at 7pm and closes at 10pm.
+  utter_days:
+  - text: The restaurant is open each and every day.
+  utter_cancel:
+  - text: To cancel a reservation, simply call us at +91 9876543210 and cancel your reservation
+  utter_specials:
+  - text: Our chef is a master of the Italian cuisine. Our core speciality is our pasta, which is renowned throughout the city.
+  utter_ask_seat:
+  - text: How many seats would you like to reserve?
+  utter_ask_section:
+  - text: 'Which section would you like to book:'
+    buttons:
+    - title: AC
+      payload: AC
+    - title: Non-AC
+      payload: Non-AC
+  utter_ask_time:
+  - text: When would you like to book a reservation? (We are only open from 7pm to 10pm)?
+  utter_time:
+  - text: "It is {time}"
+  utter_slots_values:
+  - text:  You have reserved {seat} seats in our {section} section for {time}. Thanks!
+actions:
+- utter_slots_values
+- validate_reservation_form
+forms:
+  reservation_form:
+    seat:
+      - type: from_entity
+        entity: seats
+    section:
+      - type: from_entity
+        entity: section
+    time:
+      - type: from_entity
+        entity: time
+    
+       
