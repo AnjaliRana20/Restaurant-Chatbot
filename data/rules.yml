@@ -1,0 +1,36 @@
+rules:
+
+- rule: faq_1
+  steps:
+  - intent: faq_timings
+  - action: utter_timings
+- rule: faq_2
+  steps:
+  - intent: faq_cancel
+  - action: utter_cancel
+- rule: faq_3
+  steps:
+  - intent: faq_specials
+  - action: utter_specials
+- rule: faq_4
+  steps:
+  - intent: faq_days
+  - action: utter_days
+
+- rule: Activate form
+  steps:
+  - intent: details
+  - action: reservation_form
+  - active_loop: reservation_form
+
+- rule: Submit form
+  condition:
+  - active_loop: reservation_form
+  steps:
+  - action: reservation_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_slots_values
+  - action: validate_reservation_form
+  

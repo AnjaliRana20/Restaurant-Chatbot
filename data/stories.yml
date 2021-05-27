@@ -1,0 +1,26 @@
+version: "2.0"
+
+stories:
+
+- story: interactive_story_1
+  steps:
+  - intent: details
+  - action: reservation_form
+  - active_loop: reservation_form
+  - slot_was_set:
+    - requested_slot: seats
+  - slot_was_set:
+    - seats: four
+  - slot_was_set:
+    - requested_slot: section
+  - slot_was_set:
+    - section: AC
+  - slot_was_set:
+    - requested_slot: time
+  - slot_was_set:
+    - section: 7:30 pm
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_slots_values
+  - action: validate_reservation_form
