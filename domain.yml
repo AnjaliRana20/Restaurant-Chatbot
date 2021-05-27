@@ -47,8 +47,6 @@ responses:
       payload: Non-AC
   utter_ask_time:
   - text: When would you like to book a reservation? (We are only open from 7pm to 10pm)?
-  utter_time:
-  - text: "It is {time}"
   utter_slots_values:
   - text:  You have reserved {seat} seats in our {section} section for {time}. Thanks!
 actions:
