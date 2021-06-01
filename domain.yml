@@ -8,11 +8,9 @@ intents:
   - faq_specials
   - faq_days
   - faq_cancel
-  - ask_time
 entities:
   - seats
   - section
-  - timing
   - time
 slots:  
   seat:
@@ -29,26 +27,26 @@ slots:
     influence_conversation: false
 responses:
   utter_timings:
-  - text: The restaurant opens at 7pm and closes at 10pm.
+  - text: The restaurant remains opens from 6am to 11pm.
   utter_days:
-  - text: The restaurant is open each and every day.
+  - text: The restaurant remains open everyday.
   utter_cancel:
-  - text: To cancel a reservation, simply call us at +91 9876543210 and cancel your reservation
+  - text: Call us at +91 6372245897 to cancel your reservation
   utter_specials:
-  - text: Our chef is a master of the Italian cuisine. Our core speciality is our pasta, which is renowned throughout the city.
+  - text: Our core speciality is our rajma chawal. 
   utter_ask_seat:
-  - text: How many seats would you like to reserve?
+  - text: How many rooms would you like to book?
   utter_ask_section:
-  - text: 'Which section would you like to book:'
+  - text: 'In which section you want to book rooms:'
     buttons:
     - title: AC
       payload: AC
     - title: Non-AC
       payload: Non-AC
   utter_ask_time:
-  - text: When would you like to book a reservation? (We are only open from 7pm to 10pm)?
+  - text: When would you like to book a reservation? (We are only open from 6am to 11pm)?
   utter_slots_values:
-  - text:  You have reserved {seat} seats in our {section} section for {time}. Thanks!
+  - text:  You have reserved {seat} {section} rooms for {time} today. Thankyou for choosing our restaurant!
 actions:
 - utter_slots_values
 - validate_reservation_form
